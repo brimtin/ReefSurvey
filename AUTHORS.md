@@ -1,2 +1,3 @@
 ## Authors:
-Thomas Lowry
+Thomas Lowry\
+Ryan Newman\
