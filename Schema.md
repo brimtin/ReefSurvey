@@ -1,34 +1,46 @@
 Location 
 {
-	BatchCode (PK)
-	Region  
-	SubRegion
+	LocationID  	(PK) 
+	RegionID 		(FK)
 	Longitude
 	Latitute
 }
-
-Fish
+Region
 {
-	ScientificName  (PK)
-	SubRegion       (FK)
-	CommonName
-	Family
-	Trophic
-	FishLength
-	StructureType
+	RegionID		(PK)
+	Region
+	SubRegion
 }
-
 Survey
 {
-	SurveyIndex    (PK)
-	ScientificName (FK)
-	BatchCode	   (FK)
+	SurveyID 		(PK) 
+	ObservationID   (FK)
+	SurveyIndex   
+	BatchCode	   
 	StudyArea
 	SurveyDate
 	SurveyYear
 	Management
 	FishCount
-	
-	
-
+}
+FishObserved
+{
+	ObservationID 	(PK)
+	MetricID		(FK)
+	LocationID		(FK)
+	Family
+	Trophic
+}
+FishInfo
+{
+	MetricID		(PK)
+	FishID			(FK)
+	FishLength
+	StructureType
+}
+FishName
+{
+	FishID   (Pk ) Int
+	ScientificName
+	CommonName
 }
