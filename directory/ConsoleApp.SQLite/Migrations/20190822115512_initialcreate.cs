@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ConsoleApp.SQLite.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialcreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +12,7 @@ namespace ConsoleApp.SQLite.Migrations
                 columns: table => new
                 {
                     FishInfoID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     MetricID = table.Column<int>(nullable: false),
                     FishLength = table.Column<float>(nullable: false),
                     StructureType = table.Column<string>(nullable: true)
@@ -26,7 +27,7 @@ namespace ConsoleApp.SQLite.Migrations
                 columns: table => new
                 {
                     FishNameID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ScientificName = table.Column<string>(nullable: true),
                     CommonName = table.Column<string>(nullable: true)
                 },
@@ -40,7 +41,7 @@ namespace ConsoleApp.SQLite.Migrations
                 columns: table => new
                 {
                     FishObservedID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     MetricID = table.Column<int>(nullable: false),
                     LocationID = table.Column<int>(nullable: false),
                     Family = table.Column<string>(nullable: true),
@@ -56,7 +57,7 @@ namespace ConsoleApp.SQLite.Migrations
                 columns: table => new
                 {
                     LocationID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     RegionID = table.Column<int>(nullable: false),
                     Longitude = table.Column<float>(nullable: false),
                     Latitude = table.Column<float>(nullable: false)
@@ -71,7 +72,7 @@ namespace ConsoleApp.SQLite.Migrations
                 columns: table => new
                 {
                     RegionID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     RegionName = table.Column<string>(nullable: true),
                     SubRegionName = table.Column<string>(nullable: true)
                 },
@@ -85,7 +86,7 @@ namespace ConsoleApp.SQLite.Migrations
                 columns: table => new
                 {
                     SurveyID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ObservationID = table.Column<int>(nullable: false),
                     SurveyIndex = table.Column<int>(nullable: false),
                     BatchCode = table.Column<string>(nullable: true),

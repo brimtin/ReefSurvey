@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace ConsoleApp.SQLite
+namespace ConsoleApp.SQLServer
 {
     public class ReefSurvey : DbContext
     {
@@ -14,7 +14,7 @@ namespace ConsoleApp.SQLite
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=reefsurvey.db");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=testDB;Integrated Security=true");
         }
     }
 
