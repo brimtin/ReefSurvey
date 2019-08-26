@@ -25,6 +25,7 @@ namespace ConsoleApp.SQLServer
         public int MetricID { get; set; }
         public float FishLength { get; set; }
         public string StructureType { get; set; }
+        public FishObserved FishObserved { get; set; }
     }
 
     public class FishName
@@ -32,6 +33,7 @@ namespace ConsoleApp.SQLServer
         public int FishNameID { get; set; }
         public string ScientificName { get; set; }
         public string CommonName { get; set; }
+        
     }
 
     public class FishObserved
@@ -41,6 +43,7 @@ namespace ConsoleApp.SQLServer
         public int LocationID { get; set; }
         public string Family { get; set; }
         public string Trophic { get; set; }
+        public Location Location { get; set; }
     }
 
     public class Location
@@ -49,6 +52,7 @@ namespace ConsoleApp.SQLServer
         public int RegionID { get; set; }
         public float Longitude { get; set; }
         public float Latitude { get; set; }
+        public Region Region { get; set; }
     }
 
     public class Region

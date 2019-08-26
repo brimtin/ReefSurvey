@@ -8,7 +8,7 @@ namespace ConsoleApp.SQLite.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "FishInfos",
+                name: "FishID",
                 columns: table => new
                 {
                     FishInfoID = table.Column<int>(nullable: false)

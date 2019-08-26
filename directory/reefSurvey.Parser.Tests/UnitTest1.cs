@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using ReefTest.Parser;
 using Shouldly;
+using reefSurvey;
 
 namespace reefSurvey.Parser.Tests
 {
